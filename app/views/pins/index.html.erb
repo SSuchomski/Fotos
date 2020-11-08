@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+        <td><%= pin.description %></td>
+        <td><%= link_to 'Otwórz', pin %></td>
+        <td><%= link_to 'Edycja', edit_pin_path(pin) %></td>
+        <td><%= link_to 'Usuń', pin, method: :delete, data: { confirm: 'Czy napewno chcesz usunąć wpis?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowy pin', new_pin_path %>

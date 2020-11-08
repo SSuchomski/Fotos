@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile
+display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle
+collapsed" data- 6
+toggle="collapse" data-target="#bs-example-
+navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<%= link_to 'Obrazkowo', root_path, class: 'navbar-brand' %>
+</div>
+<!-- Collect the nav links, forms, and other
+content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+
+</li> <li><%= link_to 'Strona główna', root_path %>
+</li> <li><%= link_to 'O mnie', home_about_path %>
+
+<li><%= link_to 'Lista pinów', pins_path %></li>
+
+<% if user_signed_in? %>
+  <li><%= link_to 'Edycja profilu', edit_user_registration_path %></li>
+
+  <li><%= link_to 'Nowy pin', new_pin_path %></li>
+  
+  <li><%= link_to 'Wylogowanie', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+  <li><%= link_to "Logowanie", new_user_session_path %></li>
+
+  <li><%= link_to "Rejestracja", new_user_registration_path %></li>
+
+  <% end %>
+
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
